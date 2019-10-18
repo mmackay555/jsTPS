@@ -1,0 +1,37 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>jsTPS Testing</title>
+    <link rel="stylesheet" type="text/css" href="./css/jsTPS_layout.css">
+    <script src="./src/jstps/jsTPS.js"></script>
+    <script src="./src/jstps//jsTPS_Transaction.js"></script>
+    <script src = "./src/test/jsTPS_View.js"></script>
+    <script src="./src/test/jsTPS_Controller.js"></script>
+    <script src = "./src/test/Num.js"></script>
+    <script src = "./src/test/addToNum_Transaction.js"></script>
+    <script>
+        window.onload = function(){
+            window.jstps = new jsTPS();
+            window.jstps.controller = new jsTPS_Controller();
+            window.jstps.view = new jsTPS_View();
+            window.addtonum = new AddToNum_Transaction();
+            window.num = new Num();
+        }
+    </script>
+</head>
+<body>
+    <div id="jstps_test_input">
+    <div id="jstps_input_header">
+            <p>1) Add a Transaction</p>
+            <p>2) Undo a Transaction</p>
+            <p>3) Redo a Transaction</p>
+            <p>4) Clear All Transactions</p>
+            <p>5) Reset Num and Transactions</p>
+    </div>
+    <div id="jstps_input_forms">
+        <input type="textbox" id="jstps_textbox">
+        <button id="jstps_submit">Submit</button>
+    </div>
+    </div>
+</body>
+</html>

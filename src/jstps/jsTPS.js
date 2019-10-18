@@ -77,5 +77,15 @@ class jsTPS{
     getUndoSize(){
         return (this.mostRecentTransaction + 1);
     }
-    
+    toString(){
+        let text = "--Number of Transactions: " + this.transactions.length + '\n';
+        text = text + "--Current Index on Stack: " + this.mostRecentTransaction + '\n';
+        text = text + "--Current Transition Stack: " + '\n';
+        let i = 0;
+        for(i = 0; i <= this.mostRecentTransaction; i++){
+            let jT = this.transactions[i];
+            text = text + "-----" + jT.toString() + '\n';
+        }
+        return text
+    }
 }
