@@ -1,8 +1,13 @@
-class AddToNum_Transaction extends jsTPS_Transaction{
-    constructor(){
-        super();
-        this.num = null;
-        this.amt = 0;
+class AddToNum_Transaction{
+    constructor(initNum, initAmt){
+        this.num = initNum;
+        this.amt = initAmt;
+    }
+    getNumber(){
+        return this.num
+    }
+    getAmt(){
+        return this.amt
     }
     setNumber(num){
         this.num = num;
@@ -11,12 +16,12 @@ class AddToNum_Transaction extends jsTPS_Transaction{
         this.amt = amt;
     }
     doTransaction(){
-        let oldNum = num.getNum();
+        let oldNum = this.num.getNum();
         let newNum = +oldNum + +this.amt;
         this.num.setNum(newNum);
     }
     undoTransaction(){
-        let oldNum = num.getNum();
+        let oldNum = this.num.getNum();
         let newNum = +oldNum - +this.amt;
         this.num.setNum(newNum);
     }

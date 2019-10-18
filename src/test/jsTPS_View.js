@@ -36,6 +36,11 @@ class jsTPS_View{
         return updateDiv;
 
     }
+    noTransactions(){
+        let errorDiv = document.createElement("p");
+        errorDiv.innerHTML = "There are no transactions. ";
+        return errorDiv;
+    }
     setupCallback(element, elementCallbackName, callbackFunctionName, args) {
         let functionCallText = callbackFunctionName + "(";
         for (let i = 0; i < args.length; i++) {
